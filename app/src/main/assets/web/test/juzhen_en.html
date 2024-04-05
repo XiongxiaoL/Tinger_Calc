@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算方法</title>
+</head>
+
+<body>
+	<h1 align="left" font = "黑体" style="font-size: 32px">1. Instructions for matrix calculation</h1>
+
+	<hr>
+	<p><font size="5">
+		1. Conventions: Fractions and polynomials are generally called rational expressions; then in a matrix, either a mixture of decimals and integers (calculated according to decimals, there will be errors), or a mixture of rational expressions and integers (calculated according to fractions, not There will be errors), other mixed forms of input are not supported, and weird formulas such as 0.2x, 0.2/5 cannot appear</font>
+	</p>
+	<hr>
+	<p><font size="5">
+		2. Sorry, only one unknown number is currently supported -- 2021.3.20</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		3. The legal input format is like: -2, 2, 2/7, -2/7, 2x, -2x, 2x+1, 2x^2+2,
+  1/x, (1/8)(x^5), x, 2x/3, x/3, -6.6, 5.21, 13.14. It is temporarily not possible to enter the root sign, sin, ln, lim or other mathematical symbols other than the 52 uppercase and lowercase English letters;</font>
+	</p>
+	<hr>
+	<p><font size="5">
+		4. Use Chinese commas or English commas to separate the matrix elements in each row, and enter the next row after entering the next row with a semicolon or carriage return. As you can see, there are several buttons below the input box to assist you in input;</font>
+	</p>
+	<hr>
+	<p><font size="5">
+		5. The default number of the multi-matrix part is 1. If you need to request the power of a certain matrix, you only need to select the check mark under the matrix, and then enter a power not higher than 20 (the power may be too high and there may be a value Overflow error), just confirm;</font>
+	</p>
+	<hr>
+	<p><font size="5">
+		6. You can download an APP called maple calculator to get a better experience. That APP can calculate symbolic integrals, take photos and input, and support complete matrix calculations, which is very powerful. You can also download an APP called a matrix calculator. Although it cannot perform symbolic calculations, it provides basic operations including the determinant and inverse operations of the decimal matrix and the fraction matrix, and supports mixed calculations of up to five matrices. You can download an APP called “See Function”, which can easily draw functions or equations.</font>
+	</p>
+	<hr>
+	<h2 align="left" font = "黑体" style="font-size: 30px">2, About the matrix</h2>
+
+	<hr>
+	<p align="left" style="font-size: 25px"><font size="6">1,What is the matrix? </font></p>
+	<hr>
+	<p><font size="5">
+		When I was a freshman, it was very difficult for me to learn matrices. At that time, the teacher told us that you don’t think the matrix is too complicated. You can think of the matrix as a piece of number. In the later study, the matrix is indeed used as storage. Data tools. However, in mathematics, a matrix is essentially a transformation. Whether you can deeply realize this is probably the difference between engineering students and science students. Here I will give you directions:
+	    </font>
+	</p>
+	<p><font size="5"><a href="https://www.youtube.com/watch?v=fNk_zzaMoSs">https://www.youtube.com/watch?v=fNk_zzaMoSs</a></font></p>
+	<p><font size="5">
+		As you can see, you need to go over the wall to watch. There are some people at station B carrying the blogger's video. Searching for the essence of linear algebra, you can probably find it. Unlike the habit of teaching linear algebra/advanced algebra in domestic colleges and universities, starting from the determinant, this blogger gradually guides the audience to understand the matrix from the vector, and then explains the matrix multiplication, the determinant , Eigenvalues, inverse matrices and other concepts, people benefit a lot.
+		</font>
+	</p>
+<p></p>
+	<hr>
+	<p align="left" style="font-size: 25px"><font size="6">2. How are the functions of this part realized?</font></p>
+	<hr>
+
+	<p>
+	</p>
+	<p><font size="5">
+		This part of the calculation function should be called symbolic calculation. It can also be regarded as a miniature computer algebra system. MATLAB, maple, and Mathematica that many college students use are all powerful computer algebra systems. There are actually in China. At the 11th Challenge Cup in 2011, a team of undergraduate students from Tsinghua University developed a computer algebra system called maTHμ, which is also very powerful. This system is now open source and can be searched on github. It should be noted that we did not refer to their code, the operating system is different, they are mainly written in C++, we are written in Java, and our mathematical structure is also designed by ourselves, which is more suitable for Android development. They left a book "Mathematical Principles of Computer Algebra System", which they compiled and collected, and compiled the literature on computer algebra systems at home and abroad into this book. This book contains the most basic and basic computer algebra systems. The most important content also gave us a lot of inspiration. We treat each matrix element as a polynomial fraction, because only the fraction can be closed for addition, subtraction, multiplication and division. This is actually in the "Mathematical Principles of Computer Algebra System" "It is also reflected in. The development process is long and tortuous, basically starting from zero, we only have the basis of C, and the following Java, xml, html and Android development are all self-taught. Because we are designing a multi-layer structure, that is, coefficients, words and degrees form a monomial, a monomial forms a polynomial, and a polynomial forms a fraction, and these fractions form a matrix. You can probably imagine that such a multi-layer structure will cause quite a lot of null pointer exception problems, which has caused great difficulties for us who have no experience in Java project development, and often fall into complicated and painful function tests, in order to deal with these The problem is that we designed a type system, supplemented by type self-checking functions, so that our functions have high independence, good encapsulation, and higher efficiency. Therefore, the entire matrix calculation code is only more than nine thousand. In fact, in the original idea, it is allowed to enter any number of unknowns, but because the literature introducing the common factor of multivariate polynomials is very rare (there are only 3 relevant Chinese literatures on the knowledge network), and the algorithm we used is referenced from : "The Application of the Chinese Remainder Algorithm in the Extraction of the Greatest Common Factor of Multivariate Polynomials Yang Ningxue, Zhu Changling, Gong Hui", its algorithm complexity is high, and finally gave up, if you have a better idea, you can solve the multivariate polynomial The greatest common factor, I hope you can contact us, the contact method is to send the content to the mailbox: 2078579090@qq.com, thank you!</font>
+	</p>
+	<p></p>
+	
+	<hr>
+<hr>
+
+
+
+</body>
+</html>

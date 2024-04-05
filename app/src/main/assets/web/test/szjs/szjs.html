@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算方法</title>
+</head>
+
+<body>
+	<h1 align="left" font = "黑体" style="font-size: 30px">一、数值计算部分使用说明</h1>
+
+	<hr>
+	<p><font size="5">
+		1、输入数据的时候，允许小数、整数、分数的任意混合输入，可以以中文逗号，英文逗号，空格，回车为分隔符，可以无限制使用空格，例如下面的输入也是合法的：</font>
+	</p>
+	<p align="left">	<font size="5">0.2  0.3  0.2，0.5 , 1/2  2  0.5，3  2/7</font></p>
+
+	<hr>
+	<p><font size="5">
+		2、请输入合法的分数，仅能识别形如：  1/2，-1/2 这样的分数，不能识别形如-1/-2 ，  1/-2   （-1）/（-2）  -1/（-2）等显然不是碳基生物能写出来的分数形式；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		3、不要以除空格以外的任何符号进行结尾。数据输完之后不需要加一个分号或者句号；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		4、你所输入的数据都将被当做小数处理，即使你全部输入都是分数；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		5、计算结果都做过这样的处理：最终结果保留四位小数，去掉了多余的0；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		6、请保证所输入的各组数据的数据数目是一致的；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		7、在选中了使用等权重的情况下，你所输入的权重值不会参与运算，如果你没有选中等权值，请输入长度和数据点数目相等的权重数据；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		8、在不输入多项式拟合次数（必须为整数）的情况下，不会显示多项式拟合的结果；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		9、请保证转化前的数值的进制是正确的，目前仅支持无符号整数（就是正数）之间的转换；</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		10、程序的计算结果可能会与你的参考书的答案有些许出入，这应该是精度的问题，程序使用double来计算结果，而笔算不会使用如此高的精度。如果出现极端的错误情况，请保留截图并联系我们，联系方式见首页右上角。感谢你的反馈。</font>
+	</p>
+	<hr>
+	
+
+	<hr>
+	<h2 align="left" font = "黑体" style="font-size: 30px">二、计算方法</h2>
+
+	<hr>
+	<p align="left" style="font-size: 25px">1、牛顿插值（这个功能被删掉了，因为差商表不好显示）：</p>
+	<hr>
+
+	<p><font size="5">
+		具体的算法不做描述，请移步百度百科，也可参阅《数值计算方法/唐旭清主编--科学出版社》第112页，这里介绍差商表的计算方法供参考：</font>
+	</p>
+	<p><font size="5">
+		X = [0.1 , 0.2 , 0.3 , 0.4];</font>
+	</p>
+	<p><font size="5">
+		Y = [1.1 , 2.3 , 3.7 , 4.4];</font>
+	</p>
+	<p><font size="5">
+		待插值点x0 = 0.15；</font>
+	</p>
+	<p><font size="5">
+		插值次数p = 3；</font>
+	</p>
+	<p>
+		<td><img src="../szjs/s1.jpg" height="300px" width="1250px"></td>
+	</p>
+	<p><font size="5">
+		可得三次Newton计算公式为：</font>
+	</p>
+	<p><font size="5">
+		N3(x) = 1.1 + 12(x-0.1) + 10(x-0.1)(x-0.2) + 50(x-0.1)(x-0.2)(x-0.3)</font>
+	</p>
+	<p><font size="5">
+		于是，f(0.15) ~= N3(0.15) = 1.6187</font>
+	</p>
+	<p><font size="5">
+		将数据点(0.15,1.6187)放到差商表的最后一行再做差商，就可以得到完整的差商表。</font>
+	</p>
+
+
+	<hr>
+	<p align="left" style="font-size: 25px">2、多项式插值：</p>
+	<hr>
+
+	<p><font size="5">
+		通常地，我们认为一个系数向量可以唯一的表征一个一元多项式，特别的，一组长度为n+1的数据点，在一定条件下，也可以唯一的表征一个n次的一元多项式，</font>
+	</p>
+	<p><font size="5">
+		设该多项式为</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片1.jpg" height="100px" width="250px"></td>
+	</p>
+	<p><font size="5">
+		将数据点代入，可以得到n+1个方程组，进而得到方程组对应的增广矩阵，在系数矩阵非奇异（行列式不为0）的情况下，可求得唯一解a，进而得到该多项式。</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片1.jpg" height="100px" width="250px"></td>
+	</p>
+	<hr>
+
+
+	<hr>
+	<p align="left" style="font-size: 25px">3、拉格朗日插值：</p>
+	<hr>
+
+	<p><font size="5">
+		拉格朗日插值的基本原理不做描述，下面给出Lagrange插值公式:</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片2.jpg" height="80px" width="340px"></td>
+	</p>
+	<p><font size="5">
+		将式中，xi，yi 为数据点，x为待插值点。</font>
+	</p>
+	<p><font size="5">
+		显然，用拉格朗日插值公式求解插值多项式的方法的计算复杂度比多项式插值（线性方程求解）的复杂度要小得多。</font>
+	</p>
+	<hr>
+
+
+	<hr>
+	<p align="left" style="font-size: 25px">4、多项式拟合：</p>
+	<hr>
+
+	<p><font size="5">
+		拟合的目标：根据给点的数据点（xi,yi）以及加权系数wi (i = 1,2,,,n)，选取近似的函数形式，即给点函数类H，求函数φ(x)∈H，使得</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片3.jpg" height="100px" width="750px"></td>
+	</p>
+	<p><font size="5">
+		式中，S为残差。</font>
+	</p>
+	<p><font size="5">
+		最小，此即为数据拟合的最小二乘法，得到的函数(x,θ)称为这组数据的最小二乘解，通常取H为一些比较简单的函数集合，如低次多项式、指数函数等。</font>
+	</p>
+	<p><font size="5">
+		特别地，当wi = 1(i = 1,2,,,n)，则称此为自然权系数，一般地，不特别说明，数据的权就取自然权系数，在本APP中，不输入权值，则默认采用自然权系数。</font>
+	</p>
+	<p>
+		
+	</p>
+	<p><font size="5">
+		一般地，设给点数据组(xi,yi)(i = 1,2,,,n),φ0(x),φ1(x),,,φm(x)为已知的一组[a,b]上线性无关的函数组，选取近似函数为</font>
+	</p>
+	<p><font size="5">
+		φ(x)∈ H = span{φ0(x),φ1(x),,,φm(x)},则</font>
+	</p>
+	<p><font size="5">
+		φ(x) = a0φ0(x) + a1φ1(x) +...+ amφm(x)</font>
+	</p>
+	<p><font size="5">
+		//a为待定系数</font>
+	</p>
+	<p><font size="5">
+		例如，直线拟合时，取φ0(x) = 1，φ1(x) = x ;</font>
+	</p>
+	<p><font size="5">
+		那么φ(x) = a0 + a1 * x;</font>
+	</p>
+	<p><font size="5">
+		那么，原问题转化为求多元函数</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片4.jpg" height="80px" width="250px"></td>
+	</p>
+	<p><font size="5">
+		的极小值问题</font>
+	</p>
+	<p><font size="5">
+		由多元函数极值必要条件，得</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片5.jpg" height="100px" width="200px"></td>,即</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片6.jpg" height="150px" width="300px"></td>,( j = 0,1,...,m )</font>
+	</p>
+	<p><font size="5">
+		即正则方程组为：</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片7.jpg" height="120px" width="650px"></td>,( j = 0,1,...,m )</font>
+	</p>
+	<p><font size="5">
+		解此方程组，即得a，进而得到多项式</font>
+	</p>
+	<hr>
+
+	<hr>
+	<p align="left" style="font-size: 25px">5、指数拟合：</p>
+	<hr>
+
+	<p><font size="5">
+		如果数据点的分布近似指数曲线，则可考虑指数函数</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片8.jpg" height="100px" width="200px"></td>
+	</p>
+	<p><font size="5">
+		去拟合数据，按照最小二乘原理，a，b的选取应使得</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片9.jpg" height="80px" width="350px"></td>
+	</p>
+	<p><font size="5">
+		为最小。但是由此导出的正则方程组是关于参数a，b的非线性方程组，称其为非线性最下二乘问题，此类问题求解起来比较困难，所以，我们将其两端去自然对数，有</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片11.jpg" height="100px" width="350px"></td>
+	</p>
+	<p><font size="5">
+		此时，对数据组(x,y)的非线性拟合问题即可转化为对数据组(x,Iny)的线性拟合问题。</font>
+	</p>
+	
+	<hr>
+
+	<hr>
+	<p align="left" style="font-size: 25px">6、进制转换:</p>
+	<hr>
+
+	<p><font size="5">
+		进制转换的计算方法一般有如下两种：</font>
+	</p>
+	<p><font size="5">
+		1、在A进制下除以B</font>
+	</p>
+	<p><font size="5">
+		输入：正整数n的A进制表示n = (ak......a1a0)A</font>
+	</p>
+	<p><font size="5">
+		输出：n的B进制表示</font>
+	</p>
+	<p><font size="5">
+		（1）设n的B进制表示为(bt......b1b0)B</font>
+	</p>
+	<p><font size="5">
+		（2）在A进制下依次计算出</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片12.jpg" height="80px" width="450px"></td>
+	</p>
+	
+	<p><font size="5">
+		（3）返回(bt....b1b0)B</font>
+	</p>
+	<p><font size="5">
+	 	2、在B进制下乘以AB</font>
+	</p>
+	<p><font size="5">
+		输入：正整数n的A进制表示n = (ak...a1a0)A</font>
+	</p>
+	<p><font size="5">
+		1、设B进制整数x = 0</font>
+	</p>
+	<p><font size="5">
+		2、在B进制下依次计算x = Ax + ak,  k从s到0</font>
+	</p>
+	<p><font size="5">
+		3、返回x</font>
+	</p>
+	<p><font size="5">
+		注：当转换的数n较长时，进制转换应该分段进行，以“在A进制下除以B”的转换算法（第一种算法）为例，设待转换的数为n，先反复地用Bxy除n从而得到n的By进制表示，然后将n的Bxy进制表示的每一位再反复地用B除从而转换成m为Bx进制数字。这样做的好处是第二步除以xB的除法一般只是单精度运算，因此大大节约了运算时间。</font>
+	</p>
+	<p><font size="5">
+		----本计算方法摘自《计算机代数系统的数学原理》</font>
+	</p>
+
+	<hr>
+
+
+
+</body>
+</html>

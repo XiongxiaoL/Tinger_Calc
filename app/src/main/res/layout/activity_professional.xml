@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dabeijing"
+    tools:context=".activity.ProfessionalActivity">
+
+    <!-- 顶部logo图片1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#0FFFFF"
+        android:gravity="start"
+        android:paddingTop="30dp">
+
+        <!-- 顶部logo图片1 -->
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/logo1"
+            android:layout_gravity="start"
+            android:layout_weight="1"
+            android:layout_marginRight="-250dp" />
+
+        <!-- 顶部logo图片2 -->
+        <ImageView
+            android:id="@+id/logo2"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/logo4"
+            android:layout_gravity="start"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/returnImg"
+        android:background="@null"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/return1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+    <!-- 网格布局容器 -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="100dp"
+        android:background="#0FFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:columnCount="2">
+
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/matrix"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="#FFFFFF"
+                android:onClick="choose"
+                android:scaleType = "centerInside"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/juzhenjisuan" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="矩阵计算"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageButton
+                android:id="@+id/probability_theory"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="#FFFFFF"
+                android:onClick="choose"
+                android:scaleType = "centerInside"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/gailvlun" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="概率论"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <ImageButton
+                android:id="@+id/mathematical_statistics"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="#FFFFFF"
+                android:onClick="choose"
+                android:scaleType = "centerInside"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/shulitongji2" />
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="数理统计"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="205dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <ImageButton
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="100dp"
+                android:background="#FFFFFF"
+                android:onClick="choose"
+                android:scaleType = "centerInside"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/shuzhijisuan" />
+
+            <TextView
+                android:id="@+id/numerical_calculation"
+                android:layout_marginTop="10dp"
+                android:text="数值计算"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+
+    </GridLayout>
+
+
+
+</RelativeLayout>
+

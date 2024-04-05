@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yw.tingercalc">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo1"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo1"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TingerCalc">
+        <activity android:name=".activity.DocumentActivity" />
+        <activity android:name=".activity.InputMatrixActivity" />
+        <activity android:name=".activity.NumericalCalculation" />
+        <activity android:name=".activity.MathematicalStatistics" />
+        <activity android:name=".activity.MatrixCalculation" />
+        <activity android:name=".activity.ProbabilityTheory" />
+        <activity android:name=".activity.RadixConversion"/>
+        <activity android:name=".activity.Money"/>
+        <activity android:name=".activity.Tax"/>
+        <activity android:name=".activity.House"/>
+        <activity android:name=".activity.DateCalculation"/>
+        <activity android:name=".activity.BigWrite"/>
+
+
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.DailyActivity"/>
+        <activity android:name=".activity.ProfessionalActivity"/>
+
+        <activity android:name=".activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    第一组-->
+    <RelativeLayout
+        android:id="@+id/data_1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_1"
+            android:hint="@string/zengguanjuzhen"
+            android:gravity="left"
+            android:layout_centerHorizontal="true"
+            android:minLines="8"
+            android:maxLines="8"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape_border"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TableLayout
+            android:id="@+id/tab"
+            android:layout_below="@id/et_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow
+
+
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                >
+
+
+
+
+                <TextView
+
+                    android:id="@+id/c1"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/shape_border"
+                    android:text="("
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+
+                    android:id="@+id/c2"
+                    android:text=")"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:background="@drawable/shape_border"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:text="∧"
+                    android:id="@+id/c3"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/et_1"
+                    android:textColor="@color/black"
+                    android:layout_toLeftOf="@id/submit"
+                    android:background="@drawable/shape_border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+
+                    android:id="@+id/c4"
+                    android:gravity="center"
+                    android:text=","
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/shape_border"
+                    android:textColor="@color/black"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+
+                    android:gravity="center"
+
+                    android:id="@+id/c5"
+                    android:text=";"
+                    android:background="@drawable/shape_border"
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+            </TableRow>
+        </TableLayout>
+        <Button
+            android:id="@+id/clear"
+            android:text="@string/clear"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/tab"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/submit"
+            android:text="@string/ok"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/tab"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+    <TableLayout
+        android:layout_below="@id/data_1"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:text="@string/jiede"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+
+        </TableRow>
+        <TextView
+            android:id="@+id/tv_1"
+            android:text=""
+            android:textColor="@color/black"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_border"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            />
+
+
+    </TableLayout>
+</RelativeLayout>

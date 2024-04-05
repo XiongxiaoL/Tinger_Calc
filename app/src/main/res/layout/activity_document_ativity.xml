@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DocumentActivity">
+    <ScrollView
+        android:visibility="gone"
+        android:id="@+id/home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+<TextView
+    android:text="@string/jianjian1"
+    android:textColor="@color/black"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_height="wrap_content"
+    />
+       <TextView
+           android:text="@string/jianjie2"
+           android:textColor="@color/black"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           />
+       <TextView
+           android:text="@string/jianjie3"
+           android:textColor="@color/black"
+           android:layout_width="match_parent"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:layout_height="wrap_content"
+           />
+       <TextView
+          android:text="@string/jianjie4"
+           android:gravity="left"
+           android:layout_marginTop="30dp"
+           android:layout_marginRight="10dp"
+           android:textColor="@color/black"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:ignore="RtlHardcoded" />
+       <TextView
+           android:text="@string/jianjie5"
+           android:gravity="right"
+           android:layout_marginTop="30dp"
+           android:layout_marginRight="10dp"
+           android:textColor="@color/black"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           tools:ignore="RtlHardcoded" />
+
+   </TableLayout>
+    </ScrollView>
+    <WebView
+
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+<!--    webView.loadUrl("file:///android_asset/web/index.html");-->
+</RelativeLayout>

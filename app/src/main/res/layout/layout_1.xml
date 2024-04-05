@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--    第一组-->
+    <RelativeLayout
+        android:id="@+id/data_1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_1"
+            android:layout_width="390dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape_border"
+            android:gravity="left"
+            android:hint="@string/EnterSampleData"
+            android:maxLines="8"
+            android:minLines="8"
+            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/clear"
+            android:text="@string/clear"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/et_1"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/submit"
+            android:text="@string/ok"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/et_1"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/et_2"
+            android:layout_marginTop="10dp"
+
+            android:layout_below="@id/submit"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_border"
+            android:hint="@string/EnterK"
+            android:inputType="number"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            />
+        <EditText
+            android:id="@id/et_3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/shape_border"
+            android:layout_below="@id/et_2"
+            android:hint="@string/EnterP"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            />
+
+    </RelativeLayout>
+
+
+
+    <TableLayout
+        android:layout_below="@id/data_1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_1"
+                android:text="@string/Expectation"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tv_2"
+                android:text="@string/K_center"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_3"
+                android:text="@string/median"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tv_4"
+                android:text="@string/k_origin"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_5"
+                android:text="@string/variance"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tv_6"
+                android:text="@string/pfenweishu"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_7"
+                android:text="@string/KurtosisCoefficient"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+        <TableRow
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            >
+            <TextView
+                android:id="@+id/tv_8"
+                android:text="@string/coefficientOfSkewness"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

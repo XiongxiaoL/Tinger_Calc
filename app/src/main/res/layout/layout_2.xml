@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <!--    第一组-->
+    <RelativeLayout
+        android:id="@+id/data_1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_1"
+            android:hint="@string/EnterSampleData"
+            android:gravity="left"
+            android:layout_centerHorizontal="true"
+            android:layout_height="200dp"
+            android:minLines="8"
+            android:maxLines="8"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/shape_border"
+            android:textColor="@color/black"
+            android:layout_width="match_parent" />
+        <Button
+            android:id="@+id/clear"
+            android:text="@string/clear"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@id/et_1"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/submit"
+            android:text="@string/ok"
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/et_1"
+            android:background="@drawable/shape_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TableLayout
+           android:overScrollMode="always"
+            android:layout_below="@id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/desc"
+                android:layout_marginTop="10dp"
+                android:text="@string/DescriptiveStatistics"
+                android:background="#05A9F3"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <TableRow
+                android:id="@+id/tr1"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+
+                    android:text="@string/level"
+
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="mi"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="Ti"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:text="Ti²/mi"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="@string/average"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="∑yij²"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+
+            </TableRow>
+            <com.yw.tingercalc.MyListView
+                android:id="@+id/ls1"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                />
+            <TextView
+                android:id="@+id/anova"
+                android:layout_marginTop="40dp"
+                android:background="#05A9F3"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="@string/ANOVA"
+                android:gravity="center"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"/>
+            <TableRow
+                android:id="@+id/tr2"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+
+                    android:text="@string/source"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="@string/quadraticSum"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="@string/DF"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+                    android:text="@string/meanSquare"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+                <TextView
+
+                    android:text="@string/F_radio"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    />
+
+            </TableRow>
+            <com.yw.tingercalc.MyListView
+                android:id="@+id/ls2"
+
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                />
+        </TableLayout>
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

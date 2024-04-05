@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算方法</title>
+</head>
+
+<body>
+	<h1 align="left" font = "黑体" style="font-size: 30px">1. Instructions for use of numerical calculation part</h1>
+
+	<hr>
+	<p><font size="5">
+		1. When entering data, any mixed input of decimals, integers, and fractions is allowed. Chinese commas, English commas, spaces, and carriage returns can be used as separators, and spaces can be used without restrictions. For example, the following input is also legal:</font>
+	</p>
+	<p align="left">	<font size="5">0.2  0.3  0.2，0.5 , 1/2  2  0.5，3  2/7</font></p>
+
+	<hr>
+	<p><font size="5">
+		2. Please enter a legal score. Only scores in the form: 1/2, -1/2 can be recognized, but not in the form -1/-2, 1/-2 (-1)/(-2)- 1/(-2) and so on are obviously not in the form of scores written by carbon-based bioenergy;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		3. Do not end with any symbols other than spaces. There is no need to add a semicolon or period after the data is input;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		4. The data you enter will be treated as decimals, even if all your inputs are fractions;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		5. The calculation results have been processed in this way: the final result retains four decimal places, and the extra 0 is removed;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		6. Please ensure that the number of data in each group of data entered is the same;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		7. When using equal weight is selected, the weight value you enter will not participate in the calculation. If you do not select equal weight, please enter the weight data with the same length and the number of data points;</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		8. The result of polynomial fitting will not be displayed without entering the number of polynomial fitting (must be an integer);</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		9. Please ensure that the base of the value before conversion is correct, currently only supports conversion between unsigned integers (that is, positive numbers);</font>
+	</p>
+
+	<hr>
+	<p><font size="5">
+		10. The calculation result of the program may be slightly different from the answer in your reference book. This should be a matter of accuracy. The program uses double to calculate the result, and the written calculation will not use such high precision. If there is an extreme error situation, please keep the screenshot and contact us. The contact information is in the upper right corner of the homepage. Thank you for your feedback.</font>
+	</p>
+	<hr>
+	
+
+	<hr>
+	<h2 align="left" font = "黑体" style="font-size: 30px">2. Calculation method</h2>
+<!--
+	<hr>
+	<p align="left" style="font-size: 25px">1、牛顿插值（这个功能被删掉了，因为差商表不好显示）：</p>
+	<hr>
+
+	<p><font size="5">
+		具体的算法不做描述，请移步百度百科，也可参阅《数值计算方法/唐旭清主编--科学出版社》第112页，这里介绍差商表的计算方法供参考：</font>
+	</p>
+	<p><font size="5">
+		X = [0.1 , 0.2 , 0.3 , 0.4];</font>
+	</p>
+	<p><font size="5">
+		Y = [1.1 , 2.3 , 3.7 , 4.4];</font>
+	</p>
+	<p><font size="5">
+		待插值点x0 = 0.15；</font>
+	</p>
+	<p><font size="5">
+		插值次数p = 3；</font>
+	</p>
+	<p>
+		<td><img src="../szjs/s1.jpg" height="300px" width="1250px"></td>
+	</p>
+	<p><font size="5">
+		可得三次Newton计算公式为：</font>
+	</p>
+	<p><font size="5">
+		N3(x) = 1.1 + 12(x-0.1) + 10(x-0.1)(x-0.2) + 50(x-0.1)(x-0.2)(x-0.3)</font>
+	</p>
+	<p><font size="5">
+		于是，f(0.15) ~= N3(0.15) = 1.6187</font>
+	</p>
+	<p><font size="5">
+		将数据点(0.15,1.6187)放到差商表的最后一行再做差商，就可以得到完整的差商表。</font>
+	</p>
+
+-->
+	<hr>
+	<p align="left" style="font-size: 25px">2. Polynomial interpolation:</p>
+	<hr>
+
+	<p><font size="5">
+		Generally, we think that a coefficient vector can uniquely represent a univariate polynomial. In particular, a set of data points with a length of n+1 can also uniquely represent a univariate polynomial of degree n under certain conditions.</font>
+	</p>
+	<p><font size="5">
+		Let the polynomial be</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片1.jpg" height="100px" width="250px"></td>
+	</p>
+	<p><font size="5">By substituting the data points, n+1 equations can be obtained, and then the augmented matrix corresponding to the equations can be obtained. When the coefficient matrix is not singular (the determinant is not 0), the unique solution a can be obtained, and then the Polynomial.</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片1.jpg" height="100px" width="250px"></td>
+	</p>
+	<hr>
+
+
+	<hr>
+	<p align="left" style="font-size: 25px">3. Lagrangian interpolation:</p>
+	<hr>
+
+	<p><font size="5">
+		The basic principle of Lagrange interpolation is not described. The Lagrange interpolation formula is given below:</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片2.jpg" height="80px" width="340px"></td>
+	</p>
+	<p><font size="5">
+		In the formula, xi and yi are data points, and x is the point to be interpolated.</font>
+	</p>
+	<p><font size="5">
+		Obviously, the computational complexity of the method of solving the interpolation polynomial using the Lagrangian interpolation formula is much smaller than the complexity of the polynomial interpolation (solving linear equations).</font>
+	</p>
+	<hr>
+
+
+	<hr>
+	<p align="left" style="font-size: 25px">4. Polynomial fitting:</p>
+	<hr>
+
+	<p><font size="5">The goal of fitting: According to the data points (xi, yi) and the weighting coefficient wi (i = 1,2,,,n) of the given point, select the approximate function form, that is, for the point function class H, find the function φ(x )∈H, such that</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片3.jpg" height="100px" width="750px"></td>
+	</p>
+	<p><font size="5">
+		In the formula, S is the residual.</font>
+	</p>
+	<p><font size="5">Minimum, this is the least squares method of data fitting, the function (x, θ) obtained is called the least square solution of this set of data, usually H is some relatively simple function set, such as low-order polynomial, exponential function Wait.</font>
+	</p>
+	<p><font size="5">In particular, when wi = 1 (i = 1,2,,,n), this is called the natural weight coefficient. Generally, unless otherwise specified, the weight of the data is taken as the natural weight coefficient. In this APP, do not enter Weight, the natural weight coefficient is adopted by default.</font>
+	</p>
+	<p>
+		
+	</p>
+	<p><font size="5">Generally, let the point data group (xi,yi)(i = 1,2,,,n),φ0(x),φ1(x),,,φm(x) be a known set of [a, b] The linearly independent function group, select the approximate function as</font>
+	</p>
+	<p><font size="5">
+		φ(x)∈ H = span{φ0(x),φ1(x),,,φm(x)},so,</font>
+	</p>
+	<p><font size="5">
+		φ(x) = a0φ0(x) + a1φ1(x) +...+ amφm(x)</font>
+	</p>
+	<p><font size="5">
+		//a is the undetermined coefficient</font>
+	</p>
+	<p><font size="5">
+		For example, when fitting a straight line，make φ0(x) = 1，φ1(x) = x ;</font>
+	</p>
+	<p><font size="5">
+		so,φ(x) = a0 + a1 * x;</font>
+	</p>
+	<p><font size="5">
+		Then, the original problem is transformed into finding a multivariate function</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片4.jpg" height="80px" width="250px"></td>
+	</p>
+	<p><font size="5">
+		Minimum problem</font>
+	</p>
+	<p><font size="5">
+		From the necessary condition of the extreme value of the multivariate function,</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片5.jpg" height="100px" width="200px"></td>,so</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片6.jpg" height="150px" width="300px"></td>,( j = 0,1,...,m )</font>
+	</p>
+	<p><font size="5">
+		That is, the system of regular equations is:</font>
+	</p>
+	<p><font size="5">
+		<td><img src="../szjs/图片7.jpg" height="120px" width="650px"></td>,( j = 0,1,...,m )</font>
+	</p>
+	<p><font size="5">
+		Solve this system of equations to get a, and then get the polynomial</font>
+	</p>
+	<hr>
+
+	<hr>
+	<p align="left" style="font-size: 25px">5. Exponential fitting:</p>
+	<hr>
+
+	<p><font size="5">
+		If the distribution of data points approximates an exponential curve, then an exponential function can be considered</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片8.jpg" height="100px" width="200px"></td>
+	</p>
+	<p><font size="5">
+		To fit the data, according to the principle of least squares, the selection of a and b should be such that</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片9.jpg" height="80px" width="350px"></td>
+	</p>
+	<p><font size="5">
+		Is the smallest. But the regular equation system derived from this is a nonlinear equation system with parameters a and b, which is called the nonlinear lowest square problem. This kind of problem is more difficult to solve, so we take the natural logarithm at both ends ,Have</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片11.jpg" height="100px" width="350px"></td>
+	</p>
+	<p><font size="5">
+		At this time, the nonlinear fitting problem to the data set (x, y) can be transformed into the linear fitting problem to the data set (x, Iny).</font>
+	</p>
+	
+	<hr>
+
+	<hr>
+	<p align="left" style="font-size: 25px">6. Base conversion:</p>
+	<hr>
+
+	<p><font size="5">
+		There are generally two calculation methods for base conversion:</font>
+	</p>
+	<p><font size="5">
+		1. Divide by B in A base</font>
+	</p>
+	<p><font size="5">
+		Input: the A base of a positive integer n represents n = (ak......a1a0)A</font>
+	</p>
+	<p><font size="5">
+		Output: the B-ary representation of n</font>
+	</p>
+	<p><font size="5">
+		(1) Let the B system of n be expressed as(bt......b1b0)B</font>
+	</p>
+	<p><font size="5">
+		(2) Calculate in sequence under A base</font>
+	</p>
+	<p>
+		<td><img src="../szjs/图片12.jpg" height="80px" width="450px"></td>
+	</p>
+	
+	<p><font size="5">
+		(3) return (bt....b1b0)B</font>
+	</p>
+	<p><font size="5">
+	 	2. Multiply AB by base B</font>
+	</p>
+	<p><font size="5">
+		Input: the A base of a positive integer n represents n = (ak...a1a0)A</font>
+	</p>
+	<p><font size="5">
+		1. Let B integer x = 0</font>
+	</p>
+	<p><font size="5">
+		2. Calculate x = Ax + ak in sequence under B base, k from s to 0</font>
+	</p>
+	<p><font size="5">
+		3.return x</font>
+	</p>
+	<p><font size="5">
+		Note: When the converted number n is long, the base conversion should be performed in sections. Take the conversion algorithm of "divide by B in base A" (the first algorithm) as an example, set the number to be converted to n, Divide n by Bxy repeatedly to get the By hexadecimal representation of n, and then divide each digit in the Bxy hexadecimal representation of n repeatedly by B to convert m into a Bx hexadecimal number. The advantage of this is that the division by xB in the second step is generally only a single-precision operation, so the calculation time is greatly saved.</font>
+	</p>
+	<p><font size="5">
+		----This calculation method is taken from "Mathematical Principles of Computer Algebra System"</font>
+	</p>
+
+	<hr>
+
+
+
+</body>
+</html>
