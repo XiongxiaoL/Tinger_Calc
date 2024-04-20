@@ -19,6 +19,7 @@
         <activity android:name=".activity.Money"/>
         <activity android:name=".activity.Tax"/>
         <activity android:name=".activity.House"/>
+        <activity android:name=".activity.HouseResult"/>
         <activity android:name=".activity.DateCalculation"/>
         <activity android:name=".activity.BigWrite"/>
 

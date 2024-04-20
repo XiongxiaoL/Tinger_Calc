@@ -86,7 +86,7 @@ public class Money extends AppCompatActivity implements View.OnClickListener{
         double secondConvert = 0;
         double threeConvert = 0;
         switch (textFlag){
-            //后期增加长度限制
+
             case 1:
                 if (first_value.toString().equals("0") && (number.toCharArray()[0] != '.')){
                     first_value = first_value.replace(0,1,number);

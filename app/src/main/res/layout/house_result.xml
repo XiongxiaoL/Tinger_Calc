@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.House">
+    tools:context=".activity.HouseResult">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -29,7 +28,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:text="房贷计算"
+                android:text="还款明细"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:layout_width="wrap_content"
@@ -43,53 +42,14 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="下方输入贷款总额(元)"
-        android:textColor="@color/black"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/total"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/MIUI_yellow"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:text="下方输入贷款利率(%)"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="16dp"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/rate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/black"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"/>
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="26dp">
 
         <TextView
-            android:text="选择还款方式"
+            android:text="还款总额"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -98,27 +58,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <Button
-            android:id="@+id/choose_way"
+        <TextView
+            android:id="@+id/zong"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:drawableRight="@drawable/button_up_down_list"
-            android:text="等额本息"
-            android:textColor="@color/title_grey"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="26dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="26dp">
 
         <TextView
-            android:text="选择贷款年数"
+            android:text="利息总额"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
@@ -127,41 +88,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        <Button
-            android:id="@+id/choose_time"
+        <TextView
+            android:id="@+id/li"
+            android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="26dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="30"
-            android:background="@null"
-            android:textColor="@color/title_grey"
-            android:drawableRight="@drawable/button_up_down_list"/>
+            app:layout_constraintBottom_toBottomOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ListView
+        android:id="@+id/list_view"
         android:layout_width="match_parent"
-        android:layout_height="80dp">
-
-        <Button
-            android:id="@+id/house_calculate"
-            android:text="开始计算"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="26dp"
-            android:layout_marginRight="22dp"
-            android:layout_marginBottom="0dp"
-            android:background="@drawable/button_corner"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <include layout="@layout/num_keypad_just_num2" />
-
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>
