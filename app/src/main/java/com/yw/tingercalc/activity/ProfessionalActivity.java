@@ -22,17 +22,17 @@ public class ProfessionalActivity extends AppCompatActivity implements View.OnCl
     @SuppressLint("NonConstantResourceId")
     public void choose(View view) {
         switch (view.getId()){
-            case R.id.probability_theory://概率论
-                start(ProbabilityTheory.class);
+            case R.id.math:
+                start(MathActivity.class);
                 break;
-            case R.id.matrix://矩阵计算
-                start(MatrixCalculation.class);
+            case R.id.physics:
+                start(PhysicsActivity.class);
                 break;
-            case R.id.mathematical_statistics://数理统计
-                start(MathematicalStatistics.class);
+            case R.id.biology:
+                start(BiologyActivity.class);
                 break;
-            case R.id.numerical_calculation://数值计算
-                start(NumericalCalculation.class);
+            case R.id.chemistry:
+                start(ChemistryActivity.class);
                 break;
         }
     }

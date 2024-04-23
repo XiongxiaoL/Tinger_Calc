@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dabeijing"
-    tools:context=".activity.ProfessionalActivity">
+    tools:context=".activity.MathActivity">
 
     <!-- 顶部logo图片1 -->
     <LinearLayout
@@ -73,7 +73,7 @@
             android:gravity="center_horizontal">
 
             <ImageButton
-                android:id="@+id/math"
+                android:id="@+id/matrix"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="100dp"
@@ -81,11 +81,11 @@
                 android:onClick="choose"
                 android:scaleType = "centerInside"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/math" />
+                android:src="@drawable/juzhenjisuan" />
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="数学"
+                android:text="矩阵计算"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
@@ -103,7 +103,7 @@
             android:gravity="center_horizontal">
 
             <ImageButton
-                android:id="@+id/physics"
+                android:id="@+id/probability_theory"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="100dp"
@@ -111,11 +111,11 @@
                 android:onClick="choose"
                 android:scaleType = "centerInside"
                 android:layout_marginRight="40dp"
-                android:src="@drawable/physics" />
+                android:src="@drawable/gailvlun" />
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="物理"
+                android:text="概率论"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
@@ -132,7 +132,7 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
             <ImageButton
-                android:id="@+id/biology"
+                android:id="@+id/mathematical_statistics"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="100dp"
@@ -140,11 +140,11 @@
                 android:onClick="choose"
                 android:scaleType = "centerInside"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/biology" />
+                android:src="@drawable/shulitongji2" />
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="生物"
+                android:text="数理统计"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
@@ -161,9 +161,8 @@
             android:layout_height="250dp"
             android:orientation="vertical"
             android:gravity="center_horizontal">
-
             <ImageButton
-                android:id="@+id/chemistry"
+                android:id="@+id/numerical_calculation"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="100dp"
@@ -171,11 +170,11 @@
                 android:onClick="choose"
                 android:scaleType = "centerInside"
                 android:layout_marginRight="40dp"
-                android:src="@drawable/chemistry" />
+                android:src="@drawable/shuzhijisuan" />
 
             <TextView
                 android:layout_marginTop="10dp"
-                android:text="化学"
+                android:text="数值计算"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
@@ -188,6 +187,4 @@
     </GridLayout>
 
 
-
 </RelativeLayout>
-

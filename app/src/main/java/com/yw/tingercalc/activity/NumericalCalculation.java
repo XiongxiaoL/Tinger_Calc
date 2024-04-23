@@ -116,13 +116,13 @@ public class NumericalCalculation extends AppCompatActivity {
                 }
                 fManager.beginTransaction().replace(R.id.fragment,f2).commit();
                 break;
-            case R.id.c3:
-                title.setText(R.string.HexadecimalConversionT);
-                if(f3==null){
-                    f3=new fragmentT();
-                }
-                fManager.beginTransaction().replace(R.id.fragment,f3).commit();
-                break;
+//            case R.id.c3:
+//                title.setText(R.string.HexadecimalConversionT);
+//                if(f3==null){
+//                    f3=new fragmentT();
+//                }
+//                fManager.beginTransaction().replace(R.id.fragment,f3).commit();
+//                break;
 
         }
 

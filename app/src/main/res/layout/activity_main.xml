@@ -35,7 +35,8 @@
             android:layout_marginTop="100dp"
             android:src="@drawable/logo4"
             android:layout_gravity="start"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginRight="-30dp"/>
 
     </LinearLayout>
 

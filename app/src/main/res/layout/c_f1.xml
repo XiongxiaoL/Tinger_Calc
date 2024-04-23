@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:text="输入化合物分子式\n请注意区分大小写"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="#FF018786"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <TableLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <EditText
+                android:id="@+id/et_1"
+                android:layout_width="186dp"
+                android:hint="化合物分子式"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:maxLines="3"
+                android:minLines="3"
+                android:background="@drawable/shape_border"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                />
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/et_2"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_border"
+                android:hint="总分子量(g/mol)"
+                android:textSize="20dp"
+                android:gravity="center"
+                android:maxLines="3"
+                android:minLines="3" />
+
+        </TableRow>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:text="计算"
+            android:id="@+id/calculate"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_border"
+            />
+    </TableLayout>
+</RelativeLayout>

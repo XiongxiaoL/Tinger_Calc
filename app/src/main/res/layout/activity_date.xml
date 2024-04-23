@@ -118,6 +118,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="26dp"
         android:text="\t请按格式输入日期，非正常日期会自动转换\n\t结果为两日期间隔，结果的一年表示365天"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_calculation"

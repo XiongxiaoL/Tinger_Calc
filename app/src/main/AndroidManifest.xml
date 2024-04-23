@@ -23,10 +23,15 @@
         <activity android:name=".activity.DateCalculation"/>
         <activity android:name=".activity.BigWrite"/>
 
+        <activity android:name=".activity.PhysicsActivity" />
+        <activity android:name=".activity.ChemistryActivity"/>
+        <activity android:name=".activity.BiologyActivity"/>
+
 
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.DailyActivity"/>
         <activity android:name=".activity.ProfessionalActivity"/>
+        <activity android:name=".activity.MathActivity"/>
 
         <activity android:name=".activity.WelcomeActivity">
             <intent-filter>

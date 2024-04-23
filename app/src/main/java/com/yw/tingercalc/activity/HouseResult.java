@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.yw.tingercalc.R;
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class HouseResult extends AppCompatActivity implements View.OnClickListener {
@@ -45,8 +46,9 @@ public class HouseResult extends AppCompatActivity implements View.OnClickListen
         assert parcelable != null;
         detail = parcelable.getData();
         String [] details = new String[detail.length];
+        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
         for (int i = 0; i < detail.length; i ++) {
-            details[i] = "第" + i + "期\n本金:" + detail[i][0] + "||利息:" + detail[i][1] + "||总额:" + detail[i][2];
+            details[i] = "第" + i + "期\n本金:" + decimalFormat.format(detail[i][0]) + "\n利息:" + decimalFormat.format(detail[i][1]) + "\n总额:" + decimalFormat.format(detail[i][2]);
         }
 
 

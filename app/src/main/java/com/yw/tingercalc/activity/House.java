@@ -22,6 +22,7 @@ import com.yw.tingercalc.activity.HouseResult;
 import com.yw.tingercalc.utils.ConvertTable;
 import com.yw.tingercalc.utils.DoubleArrayParcelable;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class House extends AppCompatActivity implements View.OnClickListener {
@@ -52,6 +53,7 @@ public class House extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        textFlag = 1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house);
         findViewById(R.id.returnImg).setOnClickListener(this);
@@ -76,6 +78,8 @@ public class House extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.nine).setOnClickListener(this::numberClick);
         findViewById(R.id.zero).setOnClickListener(this::numberClick);
         findViewById(R.id.point).setOnClickListener(this::numberClick);
+
+        findViewById(R.id.point).setEnabled(false);
 
         findViewById(R.id.house_calculate).setOnClickListener(this::calculateClick);
 
@@ -140,9 +144,11 @@ public class House extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.total:
                 textFlag = 1;
+                findViewById(R.id.point).setEnabled(false);
                 break;
             case R.id.rate:
                 textFlag = 2;
+                findViewById(R.id.point).setEnabled(!rate_Text.getText().toString().contains("."));
                 break;
         }
         changeTextColor();
@@ -213,6 +219,7 @@ public class House extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void calculateClick(View v) {
+        DecimalFormat decimalFormat = new DecimalFormat("#,###.##");
         if (yIns == 0 || loanMoney == 0) {
             showToast("请设置总额或年利率", Toast.LENGTH_SHORT);
         } else {
@@ -221,8 +228,8 @@ public class House extends AppCompatActivity implements View.OnClickListener {
                 //等额本息
                 EqualPrincipalandInterestMethod();
                 Intent intent=new Intent(House.this, HouseResult.class);
-                intent.putExtra("totalMoney", totalMoney + "");
-                intent.putExtra("totalInterests", totalInterests + "");
+                intent.putExtra("totalMoney", decimalFormat.format(totalMoney));
+                intent.putExtra("totalInterests", decimalFormat.format(totalInterests));
 
                 // 创建 DoubleArrayParcelable 对象并传入数据
                 DoubleArrayParcelable pDetail = new DoubleArrayParcelable(detail);
@@ -235,8 +242,8 @@ public class House extends AppCompatActivity implements View.OnClickListener {
                 //等额本金
                 EqualPrincipalMethod();
                 Intent intent=new Intent(House.this, HouseResult.class);
-                intent.putExtra("totalMoney", totalMoney + "");
-                intent.putExtra("totalInterests", totalInterests + "");
+                intent.putExtra("totalMoney", decimalFormat.format(totalMoney));
+                intent.putExtra("totalInterests", decimalFormat.format(totalInterests));
 
                 DoubleArrayParcelable pDetail = new DoubleArrayParcelable(detail);
                 intent.putExtra("detail", pDetail);
@@ -324,21 +331,6 @@ public class House extends AppCompatActivity implements View.OnClickListener {
         }, 2000);
     }
 
-    //时间选择器
-    private void dayChoose() {
-        Calendar mcalendar = Calendar.getInstance();
-        int year = mcalendar.get(Calendar.YEAR);         //  得到当前年
-        int month = mcalendar.get(Calendar.MONTH);       //  得到当前月
-        final int day = mcalendar.get(Calendar.DAY_OF_MONTH);  //  得到当前日
-
-        new DatePickerDialog(House.this, new DatePickerDialog.OnDateSetListener() {      //  日期选择对话框
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                //  这个方法是得到选择后的 年，月，日，分别对应着三个参数 — year、month、dayOfMonth
-
-            }
-        },year,month,day).show();   //  弹出日历对话框时，默认显示 年，月，日
-    }
 
 
     @TargetApi(Build.VERSION_CODES.M)

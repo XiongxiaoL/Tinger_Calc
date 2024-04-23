@@ -35,7 +35,8 @@
             android:layout_marginTop="100dp"
             android:src="@drawable/logo4"
             android:layout_gravity="start"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:layout_marginRight="-30dp"/>
 
     </LinearLayout>
 
@@ -110,7 +111,7 @@
                 android:background="#FFFFFF"
                 android:onClick="choose"
                 android:scaleType = "centerInside"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="40dp"
                 android:src="@drawable/rate_conversion" />
 
             <TextView
@@ -120,7 +121,7 @@
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="40dp"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -169,7 +170,7 @@
             android:background="#FFFFFF"
             android:onClick="choose"
             android:scaleType = "centerInside"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="40dp"
             android:src="@drawable/home" />
 
             <TextView
@@ -179,7 +180,7 @@
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="40dp"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -223,7 +224,7 @@
                 android:background="#FFFFFF"
                 android:onClick="choose"
                 android:scaleType = "centerInside"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="40dp"
                 android:src="@drawable/bigwrite" />
 
             <TextView
@@ -233,7 +234,7 @@
                 android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="40dp"
                 android:gravity="center"/>
         </LinearLayout>
 

@@ -44,7 +44,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
         <LinearLayout
@@ -57,16 +57,12 @@
                 android:textColor="@color/black"
                 android:text="十进制 DEC"
                 android:textSize="20sp"/>
-            <ImageView
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/up_down_list"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:gravity="right|center_vertical">
 
             <TextView
@@ -78,13 +74,85 @@
                 android:maxLines="1"
                 android:text="1"
                 android:textColor="@color/MIUI_yellow"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="八进制 OCT"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="right|center_vertical">
+            <TextView
+                android:id="@+id/radix_thirdText"
+                android:text="1"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeStepGranularity="1sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="十六进制 HEX"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="right|center_vertical">
+            <TextView
+                android:id="@+id/radix_fourthText"
+                android:text="1"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:maxLines="1"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeStepGranularity="1sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
         <LinearLayout
@@ -97,29 +165,26 @@
                 android:textColor="@color/black"
                 android:text="二进制 BIN"
                 android:textSize="20sp"/>
-            <ImageView
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/up_down_list"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:gravity="right|center_vertical">
             <TextView
                 android:id="@+id/radix_secondText"
                 android:text="1"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
-                android:maxLines="1"
+                android:maxLines="3"
                 android:autoSizeMinTextSize="8sp"
                 android:autoSizeStepGranularity="1sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
+
 
     <include layout="@layout/num_keypad_binary"/>
 

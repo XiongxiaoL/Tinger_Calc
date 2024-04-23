@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="相干长度 = 波长 * 波长 / 波长差\n输入任意两个已知量，计算余下已知量"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:textColor="#FF018786"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TableLayout
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <EditText
+                android:id="@+id/et_1"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:hint="相干长度"
+                android:maxLines="3"
+                android:inputType="number|numberDecimal"
+                android:minLines="3"
+                android:background="@drawable/shape_border"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:id="@+id/et_2"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:hint="波长"
+                android:maxLines="3"
+                android:inputType="number|numberDecimal"
+                android:minLines="3"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_border"
+                android:layout_height="wrap_content"
+                />
+        </TableRow>
+
+        <TableRow>
+
+            <EditText
+                android:id="@+id/et_3"
+                android:layout_width="186dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_border"
+                android:hint="波长差"
+                android:inputType="number|numberDecimal"
+                android:maxLines="3"
+                android:minLines="3" />
+
+        </TableRow>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:text="计算"
+            android:id="@+id/calculate"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_border"
+            />
+    </TableLayout>
+</RelativeLayout>

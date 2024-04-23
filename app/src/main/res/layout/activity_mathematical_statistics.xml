@@ -101,11 +101,12 @@
         </TableRow>
 
     </TableLayout>
-<FrameLayout
-    android:id="@+id/fragment"
-    android:layout_below="@id/tb_choose"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment"
+        android:layout_below="@id/tb_choose"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
     </RelativeLayout>
     </ScrollView>
